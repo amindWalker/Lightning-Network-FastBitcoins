@@ -10,7 +10,8 @@ import {
   Platform,
   ActivityIndicator,
   Linking,
-  RefreshControl
+  RefreshControl,
+  ScrollView
 } from 'react-native';
 import Animated, {useAnimatedStyle, withSpring} from 'react-native-reanimated';
 import * as Keychain from 'react-native-keychain';
@@ -19,7 +20,6 @@ import * as Keychain from 'react-native-keychain';
 import {COLORS, SIZES, icons, images} from '../constants';
 import {SINGUP_URL, LOGIN_URL} from '../config';
 import DataContext from '../context/dataContext';
-import {ScrollView} from 'react-native-gesture-handler';
 
 function Home() {
   const [refreshing, setRefreshing] = useState(false);
@@ -221,26 +221,23 @@ function Home() {
   }, []);
 
   return (
-    <ScrollView
-      contentContainerStyle={styles.scrollView}
-      refreshControl={
-        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-      }>
-      <KeyboardAvoidingView
-        style={styles.container}
-        behavior={Platform.OS === 'ios' ? 'padding' : null}>
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === 'ios' ? 'padding' : null}>
+      <ScrollView
+        contentContainerStyle={{flex: 1}}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }>
         {renderHeader()}
         {renderBody()}
         {renderFooter()}
-      </KeyboardAvoidingView>
-    </ScrollView>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
-  scrollView: {
-    flex: 1
-  },
   container: {
     flex: 1,
     backgroundColor: COLORS.white

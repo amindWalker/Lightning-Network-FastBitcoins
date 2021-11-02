@@ -1,11 +1,13 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {
   SafeAreaView,
   View,
   Text,
   Image,
   FlatList,
-  TouchableOpacity
+  TouchableOpacity,
+  RefreshControl,
+  ScrollView
 } from 'react-native';
 
 // Local imports
@@ -13,6 +15,8 @@ import {COLORS, SIZES, FONTS, icons} from '../constants';
 import DataContext from '../context/dataContext';
 
 const Dashboard = () => {
+  const [refreshing, setRefreshing] = useState(false);
+
   const {logout, setToastMessage} = useContext(DataContext);
 
   const featuresData = [
@@ -154,6 +158,15 @@ const Dashboard = () => {
     );
   }
 
+  const wait = timeout => {
+    return new Promise(resolve => setTimeout(resolve, timeout));
+  };
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    wait(1000).then(() => setRefreshing(false));
+  }, []);
+
   function renderDashboard() {
     const HeaderComponent = () => (
       <View>
@@ -178,7 +191,13 @@ const Dashboard = () => {
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
-      {renderDashboard()}
+      <ScrollView
+        contentContainerStyle={{flex: 1}}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }>
+        {renderDashboard()}
+      </ScrollView>
     </SafeAreaView>
   );
 };
