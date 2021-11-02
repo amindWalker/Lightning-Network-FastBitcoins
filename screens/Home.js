@@ -328,32 +328,6 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
     opacity: 0.5
-  },
-  cancelButton: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: COLORS.primary,
-    padding: 10,
-    borderRadius: 10
-  },
-  cancelIcon: {
-    width: 20,
-    height: 20,
-    position: 'absolute',
-    right: 10,
-    top: 20,
-    opacity: 0.25
-  },
-  cancel: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: COLORS.primary,
-    padding: 10,
-    borderRadius: 10
   }
 });
 
