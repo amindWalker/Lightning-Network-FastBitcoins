@@ -139,7 +139,13 @@ const Dashboard = () => {
             }}
           />
         </View>
-        <Text style={{textAlign: 'center', flexWrap: 'wrap', ...FONTS.body4}}>
+        <Text
+          style={{
+            textAlign: 'center',
+            flexWrap: 'wrap',
+            ...FONTS.body4,
+            color: COLORS.black
+          }}>
           {item.description}
         </Text>
       </TouchableOpacity>
