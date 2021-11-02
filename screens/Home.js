@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -9,7 +9,8 @@ import {
   StyleSheet,
   Platform,
   ActivityIndicator,
-  Linking
+  Linking,
+  RefreshControl
 } from 'react-native';
 import Animated, {useAnimatedStyle, withSpring} from 'react-native-reanimated';
 import * as Keychain from 'react-native-keychain';
@@ -18,8 +19,10 @@ import * as Keychain from 'react-native-keychain';
 import {COLORS, SIZES, icons, images} from '../constants';
 import {SINGUP_URL, LOGIN_URL} from '../config';
 import DataContext from '../context/dataContext';
+import {ScrollView} from 'react-native-gesture-handler';
 
 function Home() {
+  const [refreshing, setRefreshing] = useState(false);
   // AppContext states
   const {
     email,
@@ -208,18 +211,36 @@ function Home() {
     );
   };
 
+  const wait = timeout => {
+    return new Promise(resolve => setTimeout(resolve, timeout));
+  };
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    wait(1000).then(() => setRefreshing(false));
+  }, []);
+
   return (
-    <KeyboardAvoidingView
-      style={styles.container}
-      behavior={Platform.OS === 'ios' ? 'padding' : null}>
-      {renderHeader()}
-      {renderBody()}
-      {renderFooter()}
-    </KeyboardAvoidingView>
+    <ScrollView
+      contentContainerStyle={styles.scrollView}
+      refreshControl={
+        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+      }>
+      <KeyboardAvoidingView
+        style={styles.container}
+        behavior={Platform.OS === 'ios' ? 'padding' : null}>
+        {renderHeader()}
+        {renderBody()}
+        {renderFooter()}
+      </KeyboardAvoidingView>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  scrollView: {
+    flex: 1
+  },
   container: {
     flex: 1,
     backgroundColor: COLORS.white
@@ -239,11 +260,13 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: '80%',
-    marginBottom: 20
+    marginBottom: 20,
+    color: COLORS.black
   },
   input: {
     borderBottomColor: COLORS.yellow,
     borderBottomWidth: 1,
+    color: COLORS.black,
     padding: 10,
     fontSize: 16
   },
@@ -308,6 +331,32 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
     opacity: 0.5
+  },
+  cancelButton: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: COLORS.primary,
+    padding: 10,
+    borderRadius: 10
+  },
+  cancelIcon: {
+    width: 20,
+    height: 20,
+    position: 'absolute',
+    right: 10,
+    top: 20,
+    opacity: 0.25
+  },
+  cancel: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: COLORS.primary,
+    padding: 10,
+    borderRadius: 10
   }
 });
 
