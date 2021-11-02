@@ -140,6 +140,49 @@ function Home() {
     );
   };
 
+  // Header
+  const renderHeader = () => {
+    return (
+      <View style={styles.header}>
+        <Image source={images.logo} style={styles.logo} />
+      </View>
+    );
+  };
+
+  // Body
+  const renderBody = () => {
+    return (
+      <View style={styles.body}>
+        <View style={styles.inputContainer}>
+          {renderToast()}
+          <TextInput
+            style={styles.input}
+            placeholder="Email"
+            placeholderTextColor={COLORS.lightGrey}
+            onChangeText={text => setEmail(text)}
+            value={email}
+          />
+          <Image source={icons.send} style={styles.inputIcon} />
+        </View>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={isLoading ? styles.buttonDisabled : styles.button}
+            onPress={() => login()}
+            disabled={isLoading}>
+            <Text style={styles.buttonText}>
+              {isLoading ? (
+                <ActivityIndicator size="small" color={COLORS.primary} />
+              ) : (
+                'LOGIN'
+              )}
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  };
+
+  // Footer
   const renderFooter = () => {
     return (
       <View style={styles.footer}>
@@ -169,37 +212,9 @@ function Home() {
     <KeyboardAvoidingView
       style={styles.container}
       behavior={Platform.OS === 'ios' ? 'padding' : null}>
-      <View style={styles.header}>
-        <Image source={images.logo} style={styles.logo} />
-      </View>
-      <View style={styles.body}>
-        <View style={styles.inputContainer}>
-          {renderToast()}
-          <TextInput
-            style={styles.input}
-            placeholder="Email"
-            placeholderTextColor={COLORS.lightGrey}
-            onChangeText={text => setEmail(text)}
-            value={email}
-          />
-          <Image source={icons.send} style={styles.inputIcon} />
-        </View>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={isLoading ? styles.buttonDisabled : styles.button}
-            onPress={() => login()}
-            disabled={isLoading}>
-            <Text style={styles.buttonText}>
-              {isLoading ? (
-                <ActivityIndicator size="small" color={COLORS.primary} />
-              ) : (
-                'LOGIN'
-              )}
-            </Text>
-          </TouchableOpacity>
-        </View>
-        {renderFooter()}
-      </View>
+      {renderHeader()}
+      {renderBody()}
+      {renderFooter()}
     </KeyboardAvoidingView>
   );
 }
@@ -287,7 +302,7 @@ const styles = StyleSheet.create({
   },
   footerIcon: {
     marginHorizontal: 30,
-    marginTop: 80,
+    marginTop: 40,
     alignItems: 'center',
     justifyContent: 'center',
     width: 25,
