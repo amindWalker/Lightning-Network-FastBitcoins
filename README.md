@@ -41,10 +41,6 @@
 
 ## Author
 
-<br>
-
-#
-
 <div align='right'>
 
 _built with [React Native](https://reactnative.dev/) by git-BR_
