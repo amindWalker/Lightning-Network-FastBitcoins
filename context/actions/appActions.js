@@ -1,0 +1,6 @@
+export const SET_EMAIL = 'SET_EMAIL';
+export const SET_IS_AUTHENTICATED = 'SET_IS_AUTHENTICATED';
+export const SET_TOAST_MESSAGE = 'SET_TOAST_MESSAGE';
+export const SET_IS_LOADING = 'SET_IS_LOADING';
+export const SET_KEY_SESSION = 'SET_KEY_SESSION';
+export const SET_LOGOUT = 'SET_LOGOUT';
