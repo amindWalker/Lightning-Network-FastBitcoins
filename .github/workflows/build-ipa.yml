@@ -1,19 +1,2 @@
 - name: Build iOS Action
   uses: sparkfabrik/ios-build-action@v1.1.0
-on:
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'     
-        required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags'  
-jobs:
-  printInputs:
-    runs-on: macOS-latest
-    steps:
-    - run: |
-        echo "Log level: ${{ github.event.inputs.logLevel }}"
-        echo "Tags: ${{ github.event.inputs.tags }}" 
-
