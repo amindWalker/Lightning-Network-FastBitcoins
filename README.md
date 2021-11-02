@@ -31,6 +31,8 @@
 4. Run `npm run android` or `npm run ios` (if your're using iOS maybe you'll need to run `pod install` first)
 5. Open the app in your simulator or device as described in the [React Native Documentation](https://reactnative.dev/docs/environment-setup)
 
+## 🚩 Todo
+
 - [ ] Generate production `.apk` and `.ipa` package to Android and iOS
 - [ ] Deploy to Play Store and App Store
 - [ ] Add more animations
