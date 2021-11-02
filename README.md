@@ -6,11 +6,11 @@
 
 <div align="center">
 
-## FastBitcoins connect users to the Bitcoin Lightning Network across the globe
+### FastBitcoins connect users to the Bitcoin Lightning Network across the globe
 
 <br>
 
-  <img src="https://github.com/git-BR/FastBitcoins-Lightning-Network/blob/main/fastbitcoins-app.gif?raw=true" alt="screenshot" width="50%" style="border-radius: 16px">
+  <img src="https://github.com/git-BR/FastBitcoins-Lightning-Network/blob/main/fastbitcoins-app.gif?raw=true" alt="fastbitcoins-demo-gif" width="50%" style="border-radius: 16px">
 
 </div>
 
@@ -47,6 +47,6 @@
 
 <div align='right'>
 
-_built with [![React - Native](https://img.shields.io/static/v1?label=React&message=Native&color=%2361DAFB&logo=react)](https://reactnative.dev/) by git-BR_
+_built with [React Native](https://reactnative.dev/) by git-BR_
 
 </div>
