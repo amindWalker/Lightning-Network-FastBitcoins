@@ -41,19 +41,3 @@
     browserstack-username: # optional, default is 
     # Browserstack access key (required if browserstack-upload == true)
     browserstack-access-key: # optional, default is 
-on:
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'     
-        required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags'  
-jobs:
-  printInputs:
-    runs-on: macOS-latest
-    steps:
-    - run: |
-        echo "Log level: ${{ github.event.inputs.logLevel }}"
-        echo "Tags: ${{ github.event.inputs.tags }}" 
