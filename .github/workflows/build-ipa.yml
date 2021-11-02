@@ -11,7 +11,7 @@ on:
         description: 'Test scenario tags'  
 jobs:
   printInputs:
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     steps:
     - run: |
         echo "Log level: ${{ github.event.inputs.logLevel }}"
