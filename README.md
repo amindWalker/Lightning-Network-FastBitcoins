@@ -51,4 +51,4 @@ _built with [React Native](https://reactnative.dev/) by git-BR_
 
 </div>
 
-[![react-native-android-build-apk](https://github.com/git-BR/FastBitcoins-Lightning-Network/actions/workflows/build.yml/badge.svg)](https://github.com/git-BR/FastBitcoins-Lightning-Network/actions/workflows/build.yml)
+<!-- add badge -->
