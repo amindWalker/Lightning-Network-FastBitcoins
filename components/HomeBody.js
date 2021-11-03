@@ -16,7 +16,14 @@ import DataContext from '../context/dataContext';
 import {SINGUP_URL} from '../config';
 
 const HomeBody = () => {
-  const {isLoading, setEmail, email, setToastMessage} = useContext(DataContext);
+  const {
+    isLoading,
+    setEmail,
+    email,
+    setToastMessage,
+    setIsLoading,
+    setKeySession
+  } = useContext(DataContext);
 
   // POST request to login using email
   const login = () => {

@@ -85,19 +85,19 @@ function Home() {
   }, []);
 
   return (
-    <KeyboardAvoidingView
-      style={styles.container}
-      behavior={Platform.OS === 'ios' ? 'padding' : null}>
-      <ScrollView
-        contentContainerStyle={{flex: 1}}
-        refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        }>
+    <ScrollView
+      contentContainerStyle={{flex: 1}}
+      refreshControl={
+        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+      }>
+      <KeyboardAvoidingView
+        style={styles.container}
+        behavior={Platform.OS === 'ios' ? 'padding' : null}>
         <HomeHeader />
         <HomeBody />
         <HomeFooter />
-      </ScrollView>
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+    </ScrollView>
   );
 }
 
