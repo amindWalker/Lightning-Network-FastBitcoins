@@ -37,7 +37,7 @@
 - [ ] Generate production `.apk` and `.ipa` package to Android and iOS
 - [ ] Deploy to Play Store and App Store
 - [ ] Add more animations
-- [ ] Refactor the code in smaller components
+- [x] Refactor the code in smaller components
 - [ ] Plan more features
 
 <br>

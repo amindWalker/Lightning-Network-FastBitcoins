@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -43,7 +43,7 @@ const DashboardOptions = () => {
     }
   ];
 
-  const [options, setOptions] = React.useState(optionsData);
+  const [options, setOptions] = useState(optionsData);
 
   const Header = () => (
     <View style={{marginBottom: SIZES.padding * 2}}>
