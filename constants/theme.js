@@ -31,14 +31,21 @@ export const COLORS = {
 export const SIZES = {
   // Global sizes
   minimum: 8,
+  small: 10,
+  medium: 14,
+  large: 18,
+  xlarge: 24,
+  xxlarge: 32,
+  xxxlarge: 40,
   base: 10,
   font: 16,
   radius: 20,
   padding: 20,
   padding2: 30,
   logo: width * 0.1,
+  icon: 20,
 
-  // font sizes
+  // Font sizes
   largeTitle: 50,
   h1: 30,
   h2: 22,
@@ -56,6 +63,7 @@ export const SIZES = {
 };
 
 export const FONTS = {
+  // Pre-defined fonts
   largeTitle: {
     fontFamily: 'Raleway-Regular',
     fontSize: SIZES.largeTitle,

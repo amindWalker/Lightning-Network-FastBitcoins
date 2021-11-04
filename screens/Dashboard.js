@@ -20,7 +20,10 @@ const Dashboard = () => {
     return (
       <FlatList
         ListHeaderComponent={HeaderComponent}
-        contentContainerStyle={{paddingHorizontal: SIZES.padding * 3}}
+        contentContainerStyle={{
+          paddingHorizontal: SIZES.padding * 2,
+          backgroundColor: COLORS.primary
+        }}
         numColumns={2}
         columnWrapperStyle={{justifyContent: 'space-between'}}
         keyExtractor={item => `${item.id}`}
@@ -31,7 +34,7 @@ const Dashboard = () => {
   };
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: COLORS.primary}}>
       <DashboardView />
     </SafeAreaView>
   );

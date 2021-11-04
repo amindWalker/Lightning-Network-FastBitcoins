@@ -10,7 +10,7 @@ const DashboardHeader = () => {
   return (
     <View style={styles.container}>
       <View style={{flex: 1}}>
-        <Text style={{...FONTS.h1}}>Hello!</Text>
+        <Text style={styles.helloText}>Hello!</Text>
         <Text style={styles.welcomeText}>Bitcoiner, welcome back!</Text>
       </View>
 
@@ -35,24 +35,37 @@ export default DashboardHeader;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     flexDirection: 'row',
-    marginVertical: SIZES.padding * 2
+    marginTop: SIZES.padding * 2.5
+  },
+  helloText: {
+    ...FONTS.h1,
+    color: COLORS.white,
+    textShadowColor: 'rgba(0, 0, 0, 0.25)',
+    textShadowOffset: {width: 1, height: 1},
+    textShadowRadius: 1
   },
   welcomeText: {
     ...FONTS.body2,
-    color: COLORS.gray
+    color: COLORS.white,
+    textShadowColor: 'rgba(0, 0, 0, 0.25)',
+    textShadowOffset: {width: 1, height: 1},
+    textShadowRadius: 1
   },
   logoutContainer: {
-    flex: 1,
     alignItems: 'flex-end'
   },
   logoutButton: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: COLORS.lightRed,
-    color: COLORS.red,
+    backgroundColor: COLORS.yellow,
     borderRadius: 10,
     paddingHorizontal: SIZES.padding / 2,
-    paddingVertical: SIZES.padding / 4
+    paddingVertical: SIZES.padding / 4,
+    shadowColor: COLORS.black,
+    shadowOffset: {width: 0, height: 2},
+    shadowRadius: 2,
+    elevation: 1
   }
 });

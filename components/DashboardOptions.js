@@ -5,7 +5,8 @@ import {
   TouchableOpacity,
   Image,
   FlatList,
-  StyleSheet
+  StyleSheet,
+  TouchableHighlight
 } from 'react-native';
 
 // Local imports
@@ -15,10 +16,10 @@ const DashboardOptions = () => {
   const optionsData = [
     {
       id: 1,
-      icon: icons.reload,
+      icon: icons.user,
       color: COLORS.purple,
       backgroundColor: COLORS.lightpurple,
-      description: 'Refresh'
+      description: 'Profile'
     },
     {
       id: 2,
@@ -50,32 +51,43 @@ const DashboardOptions = () => {
       <Text style={{...FONTS.h3}}>How can I help you?</Text>
     </View>
   );
+
   const renderItem = ({item}) => (
-    <TouchableOpacity
+    <TouchableHighlight
       style={styles.itemContainer}
-      onPress={() => console.log(item.description)}>
-      <View
-        style={{
-          height: 50,
-          width: 50,
-          marginBottom: 5,
-          borderRadius: 20,
-          backgroundColor: item.backgroundColor,
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
-        <Image
-          source={item.icon}
-          resizeMode="contain"
+      onPress={() => console.log(item.description)}
+      underlayColor={{color: 'transparent'}}>
+      <View>
+        <View
           style={{
-            height: 20,
-            width: 20,
-            tintColor: item.color
-          }}
-        />
+            height: 50,
+            width: 50,
+            marginBottom: 5,
+            borderRadius: 20,
+            backgroundColor: item.backgroundColor,
+            shadowColor: '#000',
+            shadowOffset: {width: 0, height: 2},
+            shadowOpacity: 0.2,
+            shadowRadius: 2,
+            elevation: 3,
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+          <View>
+            <Image
+              source={item.icon}
+              resizeMode="contain"
+              style={{
+                height: SIZES.icon,
+                width: SIZES.icon,
+                tintColor: item.color
+              }}
+            />
+          </View>
+        </View>
+        <Text style={styles.itemDescription}>{item.description}</Text>
       </View>
-      <Text style={styles.itemDescription}>{item.description}</Text>
-    </TouchableOpacity>
+    </TouchableHighlight>
   );
 
   return (
@@ -103,6 +115,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     flexWrap: 'wrap',
     ...FONTS.body4,
-    color: COLORS.black
+    color: COLORS.white,
+    textShadowColor: 'rgba(0, 0, 0, 0.25)',
+    textShadowOffset: {width: 1, height: 1},
+    textShadowRadius: 1
   }
 });

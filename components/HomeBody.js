@@ -11,7 +11,7 @@ import {
 
 // Local imports
 import Toast from './Toast';
-import {COLORS, icons} from '../constants';
+import {COLORS, icons, SIZES} from '../constants';
 import DataContext from '../context/dataContext';
 import {SINGUP_URL} from '../config';
 
@@ -125,15 +125,15 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: COLORS.primary,
     height: 75,
-    borderRadius: 10,
+    borderRadius: SIZES.base,
     alignItems: 'center',
     justifyContent: 'center',
-    elevation: 10
+    elevation: SIZES.small
   },
   buttonDisabled: {
     backgroundColor: COLORS.lightyellow,
     height: 75,
-    borderRadius: 10,
+    borderRadius: SIZES.base,
     alignItems: 'center',
     justifyContent: 'center'
   },

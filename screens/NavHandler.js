@@ -6,6 +6,7 @@ import Dashboard from './Dashboard';
 import Home from './Home';
 import DataContext from '../context/dataContext';
 import {createStackNavigator} from '@react-navigation/stack';
+import {StatusBar} from 'react-native';
 
 function NavHandler({navigation}) {
   const Stack = createStackNavigator();
@@ -35,7 +36,15 @@ function NavHandler({navigation}) {
 
   return (
     <>
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="dark-content"
+        animated
+        showHideTransition="slide"
+      />
       <Stack.Navigator
+        initialRouteName="Dashboard"
         screenOptions={{
           headerShown: false
         }}>
