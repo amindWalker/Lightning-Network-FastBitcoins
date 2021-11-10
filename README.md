@@ -28,7 +28,7 @@
 1. Clone the repository
 2. Run `npm install` in the project's root folder
 3. Run `npm start`
-4. Run `npm run android` or `npm run ios` (if your're using iOS maybe you'll need to run `pod install` first)
+4. Run `npx react-native run-android` or `npx react-native run-ios` (if your're using iOS maybe you'll need to run `cd ios && pod install && cd ..` first. Reference: [Cocoapods🔗](https://reactnative.dev/docs/environment-setup#cocoapods))
 5. Open the app in your simulator or device as described in the [React Native Documentation](https://reactnative.dev/docs/environment-setup)
 
 ## 🚩 Todo

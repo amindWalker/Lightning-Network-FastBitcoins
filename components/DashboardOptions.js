@@ -5,45 +5,43 @@ import {
   TouchableOpacity,
   Image,
   FlatList,
-  StyleSheet,
-  TouchableHighlight
+  StyleSheet
 } from 'react-native';
 
 // Local imports
 import {COLORS, FONTS, icons, SIZES} from '../constants';
 
+const optionsData = [
+  {
+    id: 1,
+    icon: icons.user,
+    color: COLORS.purple,
+    backgroundColor: COLORS.lightpurple,
+    description: 'Profile'
+  },
+  {
+    id: 2,
+    icon: icons.send,
+    color: COLORS.yellow,
+    backgroundColor: COLORS.lightyellow,
+    description: 'Transfer'
+  },
+  {
+    id: 3,
+    icon: icons.internet,
+    color: COLORS.primary,
+    backgroundColor: COLORS.lightGreen,
+    description: 'Internet'
+  },
+  {
+    id: 4,
+    icon: icons.wallet,
+    color: COLORS.red,
+    backgroundColor: COLORS.lightRed,
+    description: 'Wallet'
+  }
+];
 const DashboardOptions = () => {
-  const optionsData = [
-    {
-      id: 1,
-      icon: icons.user,
-      color: COLORS.purple,
-      backgroundColor: COLORS.lightpurple,
-      description: 'Profile'
-    },
-    {
-      id: 2,
-      icon: icons.send,
-      color: COLORS.yellow,
-      backgroundColor: COLORS.lightyellow,
-      description: 'Transfer'
-    },
-    {
-      id: 3,
-      icon: icons.internet,
-      color: COLORS.primary,
-      backgroundColor: COLORS.lightGreen,
-      description: 'Internet'
-    },
-    {
-      id: 4,
-      icon: icons.wallet,
-      color: COLORS.red,
-      backgroundColor: COLORS.lightRed,
-      description: 'Wallet'
-    }
-  ];
-
   const [options, setOptions] = useState(optionsData);
 
   const Header = () => (
@@ -53,23 +51,23 @@ const DashboardOptions = () => {
   );
 
   const renderItem = ({item}) => (
-    <TouchableHighlight
+    <TouchableOpacity
+      activeOpacity={0.7}
       style={styles.itemContainer}
-      onPress={() => console.log(item.description)}
-      underlayColor={{color: 'transparent'}}>
+      onPress={() => console.log(item.description)}>
       <View>
         <View
           style={{
             height: 50,
             width: 50,
             marginBottom: 5,
-            borderRadius: 20,
+            borderRadius: SIZES.radius,
             backgroundColor: item.backgroundColor,
             shadowColor: '#000',
             shadowOffset: {width: 0, height: 2},
             shadowOpacity: 0.2,
-            shadowRadius: 2,
-            elevation: 3,
+            shadowRadius: 3,
+            elevation: 6,
             alignItems: 'center',
             justifyContent: 'center'
           }}>
@@ -87,7 +85,7 @@ const DashboardOptions = () => {
         </View>
         <Text style={styles.itemDescription}>{item.description}</Text>
       </View>
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 
   return (

@@ -1,6 +1,10 @@
 import React, {useContext} from 'react';
 import {Text, StyleSheet} from 'react-native';
-import Animated, {useAnimatedStyle, withSpring} from 'react-native-reanimated';
+import Animated, {
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring
+} from 'react-native-reanimated';
 
 // Local imports
 import {COLORS} from '../constants';
@@ -8,16 +12,22 @@ import DataContext from '../context/dataContext';
 
 const Toast = () => {
   const {toastMessage} = useContext(DataContext);
+
+  const opacity = useSharedValue(0);
+
   const toastStyle = useAnimatedStyle(() => {
     return {
-      opacity: withSpring(toastMessage ? 1 : 0),
+      opacity: withSpring(
+        toastMessage ? (opacity.value = 1) : (opacity.value = 0)
+      ),
       transform: [
         {
-          translateY: withSpring(toastMessage ? -50 : 0)
+          translateY: withSpring(opacity.value ? -50 : 0)
         }
       ]
     };
   });
+
   return (
     <Animated.View style={[styles.toast, toastStyle]}>
       <Text style={styles.toastText}>{toastMessage}</Text>

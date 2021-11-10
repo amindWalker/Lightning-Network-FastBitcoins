@@ -99,13 +99,17 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   inputContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     width: '80%',
     marginBottom: 20,
+    borderBottomColor: COLORS.yellow,
+    borderBottomWidth: 1,
     color: COLORS.black
   },
   input: {
-    borderBottomColor: COLORS.yellow,
-    borderBottomWidth: 1,
+    flex: 1,
     color: COLORS.black,
     padding: 10,
     fontSize: 16
@@ -113,9 +117,6 @@ const styles = StyleSheet.create({
   inputIcon: {
     width: 20,
     height: 20,
-    position: 'absolute',
-    right: 10,
-    top: 20,
     opacity: 0.25
   },
   buttonContainer: {
@@ -127,8 +128,7 @@ const styles = StyleSheet.create({
     height: 75,
     borderRadius: SIZES.base,
     alignItems: 'center',
-    justifyContent: 'center',
-    elevation: SIZES.small
+    justifyContent: 'center'
   },
   buttonDisabled: {
     backgroundColor: COLORS.lightyellow,
