@@ -33,11 +33,11 @@
 
 ## 🚩 Todo
 
-- [ ] Add a QR code scanner to the app
+- [x] Add custom icons
 - [x] Generate `.apk` and `.ipa` build packages for Android and iOS
-- [ ] Deploy to production in Play Store and App Store
-- [ ] Add more animations
+- [x] Add more animations
 - [x] Refactor the code in smaller components
+- [ ] Deploy to production in Play Store and App Store
 - [ ] Plan more features
 
 <br>
