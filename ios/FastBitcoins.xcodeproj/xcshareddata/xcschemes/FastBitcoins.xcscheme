@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "BitcoinLN.app"
-               BlueprintName = "BitcoinLN"
-               ReferencedContainer = "container:BitcoinLN.xcodeproj">
+               BuildableName = "FastBitcoins.app"
+               BlueprintName = "FastBitcoins"
+               ReferencedContainer = "container:FastBitcoins.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "BitcoinLNTests.xctest"
-               BlueprintName = "BitcoinLNTests"
-               ReferencedContainer = "container:BitcoinLN.xcodeproj">
+               BuildableName = "FastBitcoinsTests.xctest"
+               BlueprintName = "FastBitcoinsTests"
+               ReferencedContainer = "container:FastBitcoins.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "BitcoinLN.app"
-            BlueprintName = "BitcoinLN"
-            ReferencedContainer = "container:BitcoinLN.xcodeproj">
+            BuildableName = "FastBitcoins.app"
+            BlueprintName = "FastBitcoins"
+            ReferencedContainer = "container:FastBitcoins.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "BitcoinLN.app"
-            BlueprintName = "BitcoinLN"
-            ReferencedContainer = "container:BitcoinLN.xcodeproj">
+            BuildableName = "FastBitcoins.app"
+            BlueprintName = "FastBitcoins"
+            ReferencedContainer = "container:FastBitcoins.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

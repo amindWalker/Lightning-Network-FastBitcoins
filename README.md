@@ -34,8 +34,8 @@
 ## 🚩 Todo
 
 - [ ] Add a QR code scanner to the app
-- [ ] Generate production `.apk` and `.ipa` package to Android and iOS
-- [ ] Deploy to Play Store and App Store
+- [x] Generate `.apk` and `.ipa` build packages for Android and iOS
+- [ ] Deploy to production in Play Store and App Store
 - [ ] Add more animations
 - [x] Refactor the code in smaller components
 - [ ] Plan more features

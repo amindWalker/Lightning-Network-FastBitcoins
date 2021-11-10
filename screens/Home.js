@@ -91,6 +91,7 @@ function Home() {
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }>
       <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles.container}
         behavior={Platform.OS === 'ios' ? 'padding' : null}>
         <HomeHeader />

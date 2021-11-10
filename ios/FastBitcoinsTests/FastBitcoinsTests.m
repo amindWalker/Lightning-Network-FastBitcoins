@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface BitcoinLNTests : XCTestCase
+@interface FastBitcoinsTests : XCTestCase
 
 @end
 
-@implementation BitcoinLNTests
+@implementation FastBitcoinsTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {
